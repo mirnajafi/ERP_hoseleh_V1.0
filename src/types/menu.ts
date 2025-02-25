@@ -1,4 +1,4 @@
-export interface SubMenuItem {
+export interface SubMenu {
   id: string;
   title: string;
   path: string;
@@ -10,8 +10,8 @@ export interface MenuItem {
   title: string;
   icon: string;
   path?: string;
-  isActive?: boolean;
-  subItems?: SubMenuItem[];
+  isActive: boolean;
+  subItems?: SubMenu[];
 }
 
 export type MenuItems = MenuItem[];
