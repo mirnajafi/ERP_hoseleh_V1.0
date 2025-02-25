@@ -1,16 +1,26 @@
 /* eslint-disable @next/next/no-img-element */
-import SearchInput from "../SearchInput/SearchInput";
+"use client";
 
-export default function Header() {
+import SearchInput from "../SearchInput/SearchInput";
+import { useState } from "react";
+import Sidebar from "../sidebar/Sidebar";
+import SidebarToggle from "../sidebar/SidebarToggle";
+
+const Header = () => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
-    <header className="h-16 bg-secondry-blue-900 shadow-sm fixed top-0 left-0 right-0 flex items-center justify-between px-6 overflow-hidden">
+    <header className="h-16 bg-secondry-blue-900 shadow-sm fixed top-0 left-0 right-0 flex items-center justify-between px-6 overflow-hidden z-50">
       <img
-          src="/icons/pattern.svg"
-          alt="logo"
-          className="h-20 absolute -right-2 top-1"
-        />
+        src="/icons/pattern.svg"
+        alt="logo"
+        className="h-20 absolute -right-2 top-1"
+      />
+      
       {/* Right Side Group */}
       <div className="flex items-center gap-3 pr-8">
+        <SidebarToggle setIsOpen={setIsSidebarOpen} />
+        <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} bgColor="bg-gray-900" />
         <img
           src="/icons/logo.svg"
           alt="logo"
@@ -41,4 +51,6 @@ export default function Header() {
       </div>
     </header>
   );
-}
+};
+
+export default Header;
