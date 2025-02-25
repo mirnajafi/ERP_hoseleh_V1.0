@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
-import Sidebar from "@/components/layout/Sidebar/Sidebar";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,11 +16,13 @@ export default function RootLayout({
   return (
     <html lang="fa" dir="rtl">
       <body className="bg-dashboard-bg min-h-screen">
+        {/* Header includes SidebarToggle, so no need to add Sidebar separately */}
         <Header />
 
-        <Sidebar />
-
-        <main className="mr-64 mt-16 p-6">{children}</main>
+        {/* Main Content Area */}
+        <main className="transition-all duration-300 mt-16 p-6">
+          {children}
+        </main>
       </body>
     </html>
   );
