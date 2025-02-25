@@ -27,13 +27,15 @@ const Sidebar: React.FC<SidebarProps> = ({ bgColor = "bg-gray-900", isOpen, onCl
         anchor="right"
         open={isOpen}
         onClose={onClose}
-        variant="persistent" // Pushes content instead of overlay
+        variant="persistent"
         sx={{
           "& .MuiDrawer-paper": {
             width: sidebarWidth,
             backgroundColor: bgColor.includes("dark") ? "#1E1E1E" : "#ffffff",
             color: bgColor.includes("dark") ? "#ffffff" : "#000000",
             transition: "width 0.3s ease-in-out",
+            marginTop: "4rem", // Push sidebar down below the header
+            height: "calc(100vh - 4rem)", // Make sure it doesn't overlap the header
           },
         }}
       >
