@@ -3,7 +3,6 @@
 
 import Dropdown from "@/components/dropdown/dropdown";
 import Input from "@/components/input/input";
-import TransparentBtn from "@/components/transparentBtn/transparentBtn";
 
 const register = () => {
 
@@ -12,14 +11,14 @@ const register = () => {
     };
     return (
         <div className="w-full flex flex-col">
-            <div className="w-full p-2 m-2 flex flex-col xl:flex-row">
+            <div className="w-full p-2 m-2">
                 <Dropdown
                     label="نام باشگاه"
                     options={["گزینه 1", "گزینه 2", "گزینه 3"]}
                     onSelect={handleSelect}
                 />
                 <Dropdown
-                    label="نام باشگاه ثبت نامی"
+                    label="نام باشگاه"
                     options={["گزینه 1", "گزینه 2", "گزینه 3"]}
                     onSelect={handleSelect}
                 />
@@ -73,27 +72,27 @@ const register = () => {
             <div className="w-full p-2 m-2 flex flex-col xl:flex-row">
                 <Input
                     label="سال تولد"
-                    type="number"
+                    type="tsxt"
                     value={''}
                     onChange={() => { }}
                     placeholder="مثال: 1370"
                 />
                 <Dropdown
                     label="رده سنی"
-                    options={["نوجوان", "جوان"]}
+                    options={["مرد", "زن"]}
                     onSelect={handleSelect}
                 />
 
                 <Input
                     label="شغل"
-                    type="text"
+                    type="tsxt"
                     value={''}
                     onChange={() => { }}
                     placeholder="مثال: کارمند"
                 />
                 <Input
                     label="کدمعرف"
-                    type="text"
+                    type="tsxt"
                     value={''}
                     onChange={() => { }}
                     placeholder="مثال: HJV"
@@ -103,7 +102,7 @@ const register = () => {
             <div className="w-full p-2 m-2 flex flex-col xl:flex-row">
                 <Input
                     label="قد"
-                    type="number"
+                    type="tsxt"
                     value={''}
                     onChange={() => { }}
                     placeholder="مثال: 179 "
@@ -119,7 +118,7 @@ const register = () => {
 
                 <Input
                     label="وزن دلخواه"
-                    type="number"
+                    type="text"
                     value={''}
                     onChange={() => { }}
                     placeholder="مثال: 65"
@@ -143,7 +142,7 @@ const register = () => {
 
                 <Input
                     label="نوع بیماری"
-                    type="text"
+                    type="number"
                     value={''}
                     onChange={() => { }}
                     placeholder="مثال: روماتیسم "
@@ -175,7 +174,7 @@ const register = () => {
 
                 <Input
                     label="نوع بیماری"
-                    type="text"
+                    type="number"
                     value={''}
                     onChange={() => { }}
                     placeholder="مثال: روماتیسم "
@@ -191,7 +190,7 @@ const register = () => {
 
                 <Input
                     label="توضیحات"
-                    type="text"
+                    type="number"
                     value={''}
                     onChange={() => { }}
                     placeholder=""
@@ -209,7 +208,7 @@ const register = () => {
 
                 <Input
                     label="نوع بیماری"
-                    type="text"
+                    type="number"
                     value={''}
                     onChange={() => { }}
                     placeholder="مثال: روماتیسم "
@@ -225,72 +224,42 @@ const register = () => {
 
                 <Input
                     label="پزشک جراح"
-                    type="text"
-                    value={''}
-                    onChange={() => { }}
-                    placeholder=""
-                />
-            </div>
-            <div className="w-full p-2 m-2 flex flex-col xl:flex-row">
-                <Dropdown
-                    label="سابقه سانحه یا تصادف"
-                    options={["ندارد", "دارد"]}
-                    onSelect={handleSelect}
-                />
-
-                <Input
-                    label="توضیحات"
-                    type="text"
-                    value={''}
-                    onChange={() => { }}
-                    placeholder=""
-                    className="xl:w-1/4 max-w-[500px]"
-                />
-
-            </div>
-
-            <div className="w-full p-2 m-2 flex flex-col xl:flex-row">
-                <Input
-                    label="رشته ورزشی"
-                    type="text"
-                    value={''}
-                    onChange={() => { }}
-                    placeholder="مثال: فوتبال "
-                />
-
-                <Input
-                    label="چند جلسه در هفته"
                     type="number"
                     value={''}
                     onChange={() => { }}
-                    placeholder="مثال: 6جلسه "
+                    placeholder=""
                 />
-
-                <Input
-                    label="در چه سطحی ورزش میکنی؟"
-                    type="text"
-                    value={''}
-                    onChange={() => { }}
-                    placeholder="مثال: حرفه ای"
-                />
-                <TransparentBtn label='افزودن' />
-
             </div>
-
             <div className="w-full p-2 m-2 flex flex-col xl:flex-row">
                 <Dropdown
-                    label="نحوه آشنایی"
+                    label="سابقه جراحی"
                     options={["ندارد", "دارد"]}
                     onSelect={handleSelect}
                 />
 
+
                 <Input
-                    label="توضیحات"
+                    label="نوع بیماری"
+                    type="number"
+                    value={''}
+                    onChange={() => { }}
+                    placeholder="مثال: روماتیسم "
+                />
+
+                <Input
+                    label="نوع جراحی"
                     type="text"
                     value={''}
                     onChange={() => { }}
+                    placeholder="مثال:تعویض مفصل زانو"
+                />
+
+                <Input
+                    label="پزشک جراح"
+                    type="number"
+                    value={''}
+                    onChange={() => { }}
                     placeholder=""
-                    className="xl:w-1/4 max-w-[500px]"
                 />
             </div>
         </div>

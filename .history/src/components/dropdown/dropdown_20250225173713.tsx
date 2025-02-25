@@ -40,15 +40,15 @@ const Dropdown: React.FC<DropdownProps> = ({ label, options, onSelect }) => {
                     <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        strokeWidth="2"
+                        strokeWidth="2"`
                         d="M19 9l-7 7-7-7"
                     />
                 </svg>
             </button>
 
             {isOpen && (
-                <div className="absolute right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                    <div className="py-1 text-right">
+                <div className="absolute right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                    <div className="py-1 text-right z-50">
                         {options.map((option, index) => (
                             <a
                                 key={index}

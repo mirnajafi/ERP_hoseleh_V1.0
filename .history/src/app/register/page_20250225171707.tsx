@@ -3,7 +3,7 @@
 
 import Dropdown from "@/components/dropdown/dropdown";
 import Input from "@/components/input/input";
-import TransparentBtn from "@/components/transparentBtn/transparentBtn";
+import transparentBtn from "@/components/transparentBtn/transparentBtn";
 
 const register = () => {
 
@@ -273,12 +273,12 @@ const register = () => {
                     onChange={() => { }}
                     placeholder="مثال: حرفه ای"
                 />
-                <TransparentBtn label='افزودن' />
+                <transparentBtn label='افزودن'/>
 
             </div>
 
             <div className="w-full p-2 m-2 flex flex-col xl:flex-row">
-                <Dropdown
+            <Dropdown
                     label="نحوه آشنایی"
                     options={["ندارد", "دارد"]}
                     onSelect={handleSelect}

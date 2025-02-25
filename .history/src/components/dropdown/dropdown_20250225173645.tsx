@@ -26,7 +26,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, options, onSelect }) => {
 
             <button
                 type="button"
-                className="inline-flex z-10 justify-between items-center w-full max-w-200 p-2 rounded-md border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 z-10"
+                className="inline-flex z-10 justify-between items-center w-full max-w-200 p-2 rounded-md border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                 onClick={toggleDropdown}
             >
                 انتخاب کنید
@@ -47,8 +47,8 @@ const Dropdown: React.FC<DropdownProps> = ({ label, options, onSelect }) => {
             </button>
 
             {isOpen && (
-                <div className="absolute right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 z-50">
-                    <div className="py-1 text-right">
+                <div className="absolute right-0 mt-2 w-full rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                    <div className="py-1 text-right z-50">
                         {options.map((option, index) => (
                             <a
                                 key={index}

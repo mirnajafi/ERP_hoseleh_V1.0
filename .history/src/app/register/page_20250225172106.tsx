@@ -273,12 +273,12 @@ const register = () => {
                     onChange={() => { }}
                     placeholder="مثال: حرفه ای"
                 />
-                <TransparentBtn label='افزودن' />
+                <TransparentBtn label='افزودن'/>
 
             </div>
 
             <div className="w-full p-2 m-2 flex flex-col xl:flex-row">
-                <Dropdown
+            <Dropdown
                     label="نحوه آشنایی"
                     options={["ندارد", "دارد"]}
                     onSelect={handleSelect}
