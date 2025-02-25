@@ -10,6 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        "deep-blue": "#1E3A8A",
+        "green": "#10B981",
+        "orange": "#F97316",
+        "red": "#EF4444",
+        "yellow": "#FBBF24",
         background: "var(--background)",
         foreground: "var(--foreground)",
         secondry: {

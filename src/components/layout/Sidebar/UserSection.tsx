@@ -12,9 +12,9 @@ export default function UserSection() {
       </div>
 
       <div className="mt-3 text-center">
-        <h2 className="text-white font-bold text-lg">علی محمدی</h2>
+        <h2 className=" font-bold text-lg">علی محمدی</h2>
         <div className="flex items-center gap-2 justify-center mt-1">
-          <span className="text-white/70 text-sm">09123494323</span>
+          <span className=" text-sm">09123494323</span>
         </div>
       </div>
     </div>

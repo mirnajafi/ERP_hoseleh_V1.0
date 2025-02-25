@@ -4,6 +4,7 @@ import { ListItem, ListItemButton, ListItemIcon, ListItemText, Collapse, List } 
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import Link from "next/link";
+import Image from "next/image";
 
 interface SidebarMenuProps {
   menuItems: MenuItems;
@@ -26,13 +27,17 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ menuItems, pathname }) => {
             {item.path ? (
               <Link href={item.path} className="w-full">
                 <ListItemButton selected={pathname === item.path}>
-                  <ListItemIcon>{item.icon}</ListItemIcon>
+                  <ListItemIcon>
+                    <Image src={item.icon} alt={item.title} width={24} height={24} />
+                  </ListItemIcon>
                   <ListItemText primary={item.title} />
                 </ListItemButton>
               </Link>
             ) : (
               <ListItemButton onClick={() => toggleSubMenu(item.id)}>
-                <ListItemIcon>{item.icon}</ListItemIcon>
+                <ListItemIcon>
+                  <Image src={item.icon} alt={item.title} width={24} height={24} />
+                </ListItemIcon>
                 <ListItemText primary={item.title} />
                 {openSubMenus[item.id] ? <ExpandLess /> : <ExpandMore />}
               </ListItemButton>

@@ -6,44 +6,45 @@ export const menuItems: MenuItems = [
     title: "خانه",
     icon: "/icons/home.svg",
     path: "/",
-    isActive:true,
+    isActive: true,
   },
   {
     id: "register",
     title: "ثبت‌نام",
     icon: "/icons/task check.svg",
     path: "/register",
-    isActive:false,
+    isActive: false,
   },
   {
     id: "classification",
     title: "کلاس‌بندی",
     icon: "/icons/board.svg",
     path: "/classification",
-    isActive:false,
+    isActive: false,
   },
   {
     id: "athletes",
     title: "ورزشکاران",
     icon: "/icons/Athletes.svg",
+    isActive: false, // Add this line
     subItems: [
       {
         id: "athletes-list",
         title: "زیرمنوی یک",
         path: "/athletes/list",
-        isActive:false,
+        isActive: false,
       },
       {
         id: "athletes-new",
         title: "زیرمنوی دو",
         path: "/athletes/new",
-        isActive:false,
+        isActive: false,
       },
       {
         id: "athletes-new",
         title: "زیرمنوی سه",
         path: "/athletes/new",
-        isActive:false,
+        isActive: false,
       }
     ]
   },
