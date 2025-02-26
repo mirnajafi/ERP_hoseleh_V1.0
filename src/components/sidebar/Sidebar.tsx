@@ -1,21 +1,21 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Drawer, List, Divider } from "@mui/material";
-import { FaChevronLeft, FaChevronDown, FaChevronRight } from "react-icons/fa";
+import { FaChevronDown, FaChevronRight } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import UserSection from "../layout/Sidebar/UserSection";
 import { menuItems } from "@/data/menuItems";
 
 interface SidebarProps {
-  bgColor?: string; // Background color of the sidebar
+  bgColor: string; // Background color of the sidebar
   isOpen: boolean;
   onClose: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ bgColor = "bg-secondry-blue-900", isOpen, onClose }) => {
-  const [sidebarWidth, setSidebarWidth] = useState(isOpen ? "256px" : "0px");
+const Sidebar: React.FC<SidebarProps> = ({ bgColor, isOpen, onClose }) => {
   const [openSubmenus, setOpenSubmenus] = useState<Record<string, boolean>>({});
-  const pathname = usePathname(); // eslint-disable-line @typescript-eslint/no-unused-vars
+  const pathname = usePathname();
+  const [sidebarWidth, setSidebarWidth] = useState(isOpen ? "256px" : "0px");
 
   useEffect(() => {
     setSidebarWidth(isOpen ? "256px" : "0px");
@@ -42,7 +42,7 @@ const Sidebar: React.FC<SidebarProps> = ({ bgColor = "bg-secondry-blue-900", isO
         sx={{
           "& .MuiDrawer-paper": {
             width: sidebarWidth,
-            backgroundColor: bgColor,
+            backgroundColor: bgColor, // Use the dynamic background color
             color: textColor,
             transition: "width 0.3s ease-in-out",
             marginTop: "4rem", // Push sidebar down below the header
@@ -59,16 +59,16 @@ const Sidebar: React.FC<SidebarProps> = ({ bgColor = "bg-secondry-blue-900", isO
         </div>
         <div className="absolute top-8 left-0 w-[1.92rem] h-full bg-dashboard-bg"></div>
 
-        {/* Sidebar Header */}
-        <div className="flex justify-between items-center p-4 border-b">
-          <h2 className="text-xl font-semibold">Navigation</h2>
-          <button onClick={onClose} className="text-gray-600">
-            <FaChevronLeft size={20} />
-          </button>
-        </div>
-
         {/* Sidebar Menu */}
-        <List>
+        <List
+          sx={{
+            overflowY: "auto", // Enable vertical scrolling
+            scrollbarWidth: "none", // Hide scrollbar for Firefox
+            "&::-webkit-scrollbar": {
+              display: "none", // Hide scrollbar for Chrome, Safari, and Opera
+            },
+          }}
+        >
           <div className="h-full pt-8 pl-6">
             {/* User Profile Section */}
             <UserSection />
@@ -149,6 +149,7 @@ const Sidebar: React.FC<SidebarProps> = ({ bgColor = "bg-secondry-blue-900", isO
       <style jsx global>{`
         main {
           margin-right: ${sidebarWidth};
+          transition: margin-right 0.3s ease-in-out; /* Smooth transition */
         }
       `}</style>
     </>
