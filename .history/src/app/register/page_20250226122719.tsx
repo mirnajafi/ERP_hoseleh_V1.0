@@ -193,7 +193,7 @@ const register = () => {
                 placeholder="مثال:تعویض مفصل زانو"
             />
 
-            <InputDescription
+            <Input
                 label="توضیحات"
                 type="text"
                 value={''}
@@ -248,7 +248,7 @@ const register = () => {
                 onSelect={handleSelect}
             />
             <InputDate label='تاریخ سانحه یا تصادف' onChange={() => { }} placeholderDay={"روز"} placeholderMonth={"ماه"} placeholderYear={"سال"} />
-            <InputDescription
+            <Input
                 label="توضیحات"
                 type="text"
                 value={''}

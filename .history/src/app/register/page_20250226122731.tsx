@@ -193,7 +193,7 @@ const register = () => {
                 placeholder="مثال:تعویض مفصل زانو"
             />
 
-            <InputDescription
+            <Input
                 label="توضیحات"
                 type="text"
                 value={''}
