@@ -1,0 +1,13 @@
+
+const Register = () => {
+
+    return (
+        <div style={{ maxWidth: "400px", margin: "50px auto", textAlign: "center" }}>
+            <h2>ثبت‌بلیلبیلبیلنام</h2>
+            <form style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            </form>
+        </div>
+    );
+};
+
+export default Register;
