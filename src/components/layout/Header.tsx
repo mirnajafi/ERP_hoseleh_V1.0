@@ -13,7 +13,7 @@ const Header = () => {
 
   // Define the background color for the header and sidebar based on the current page
   const getBgColor = () => {
-    if (pathname === "/") return "bg-deep-blue"; // Home page
+    if (pathname === "/") return "bg-secondry-blue-900"; // Home page
     if (pathname === "/register") return "bg-green"; // Register page
     if (pathname === "/classification") return "bg-orange"; // Classification page
     if (pathname === "/athletes") return "bg-red"; // Athletes page
@@ -66,7 +66,7 @@ const Header = () => {
       </header>
 
       {/* Sidebar */}
-      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} bgColor={bgColor} />
+      <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
     </>
   );
 };

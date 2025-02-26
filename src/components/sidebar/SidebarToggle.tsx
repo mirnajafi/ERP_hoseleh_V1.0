@@ -8,7 +8,7 @@ interface SidebarToggleProps {
 
 const SidebarToggle: React.FC<SidebarToggleProps> = ({ setIsOpen }) => {
   return (
-    <IconButton onClick={() => setIsOpen((prev) => !prev)} className="text-gray-600 dark:text-white">
+    <IconButton onClick={() => setIsOpen((prev) => !prev)} className=" text-white">
       <MenuIcon fontSize="large" />
     </IconButton>
   );

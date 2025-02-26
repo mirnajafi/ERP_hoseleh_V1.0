@@ -25,7 +25,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ menuItems, pathname }) => {
           {/* Main Menu Item */}
           <ListItem disablePadding>
             {item.path ? (
-              <Link href={item.path} className="w-full">
+              <Link href={item.path} className=" w-full">
                 <ListItemButton selected={pathname === item.path}>
                   <ListItemIcon>
                     <Image src={item.icon} alt={item.title} width={24} height={24} />

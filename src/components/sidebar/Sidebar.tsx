@@ -1,35 +1,32 @@
 "use client";
-import { useEffect, useState } from "react";
-import { Drawer, List, Divider } from "@mui/material";
-import { FaChevronDown, FaChevronRight } from "react-icons/fa";
+import { Drawer, List, Divider, useMediaQuery } from "@mui/material";
+import { FaChevronRight } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import Image from "next/image"; 
 import UserSection from "../layout/Sidebar/UserSection";
 import { menuItems } from "@/data/menuItems";
 
+// Define background colors for each route
+const bgColors: { [key: string]: string } = {
+  "/": "#00194D", // Deep blue
+  "/register": "#10B981", // Green
+  "/classification": "#F97316", // Orange
+  "/athletes": "#EF4444", // Red
+  "default": "#FBBF24", // Yellow
+};
+
 interface SidebarProps {
-  bgColor: string; // Background color of the sidebar
   isOpen: boolean;
   onClose: () => void;
 }
 
-const Sidebar: React.FC<SidebarProps> = ({ bgColor, isOpen, onClose }) => {
-  const [openSubmenus, setOpenSubmenus] = useState<Record<string, boolean>>({});
+const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
   const pathname = usePathname();
-  const [sidebarWidth, setSidebarWidth] = useState(isOpen ? "256px" : "0px");
+  const bgColor = bgColors[pathname] || bgColors["default"];
 
-  useEffect(() => {
-    setSidebarWidth(isOpen ? "256px" : "0px");
-  }, [isOpen]);
-
-  const toggleSubmenu = (id: string) => {
-    setOpenSubmenus((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
-
-  // Determine text color based on background color
-  const textColor = bgColor.includes("dark") ? "text-white" : "text-black";
+  // Responsive Sidebar Width
+  const isMediumScreen = useMediaQuery("(min-width: 768px)");
+  const sidebarWidth = isMediumScreen ? "256px" : "75vw";
 
   return (
     <>
@@ -42,31 +39,37 @@ const Sidebar: React.FC<SidebarProps> = ({ bgColor, isOpen, onClose }) => {
         sx={{
           "& .MuiDrawer-paper": {
             width: sidebarWidth,
-            backgroundColor: bgColor, // Use the dynamic background color
-            color: textColor,
+            backgroundColor: `${bgColor} !important`,
+            color: "#ffffff",
             transition: "width 0.3s ease-in-out",
-            marginTop: "4rem", // Push sidebar down below the header
-            height: "calc(100vh - 4rem)", // Make sure it doesn't overlap the header
-            borderTopLeftRadius: "20px", // Curved top-left edge
-            borderBottomLeftRadius: "20px", // Curved bottom-left edge
-            overflow: "hidden", // Hide scrollbar
+            height: "calc(100vh - 4rem)",
+            borderBottomLeftRadius: "20px",
+            overflow: "hidden",
+            boxShadow: "none",
+            backgroundImage: "none !important",
+            opacity: 1,
+            position: "fixed", // Fixes the blending issue
+            right: 0,
+            top: "4rem",
+          },
+          "& .MuiDrawer-root": {
+            backgroundColor: `${bgColor} !important`,
+            backdropFilter: "none !important", 
           },
         }}
       >
-        {/* Curved connector to main content */}
-        <div className="absolute -left-[0.55rem] top-0 w-10 h-8">
+        {/* Fix: Curved Connector to Main Content */}
+        <div className="absolute -left-[0.5rem] top-0 w-8 h-8">
           <div className="w-full h-full bg-dashboard-bg rounded-tr-[1.25rem]" />
         </div>
-        <div className="absolute top-8 left-0 w-[1.92rem] h-full bg-dashboard-bg"></div>
+        <div className="absolute top-8 left-0 w-[1.5rem] h-full bg-dashboard-bg"></div>
 
         {/* Sidebar Menu */}
         <List
           sx={{
-            overflowY: "auto", // Enable vertical scrolling
-            scrollbarWidth: "none", // Hide scrollbar for Firefox
-            "&::-webkit-scrollbar": {
-              display: "none", // Hide scrollbar for Chrome, Safari, and Opera
-            },
+            overflowY: "auto",
+            scrollbarWidth: "none",
+            "&::-webkit-scrollbar": { display: "none" },
           }}
         >
           <div className="h-full pt-8 pl-6">
@@ -75,69 +78,80 @@ const Sidebar: React.FC<SidebarProps> = ({ bgColor, isOpen, onClose }) => {
 
             {/* Menu Items */}
             <div className="mt-10 pr-1 space-y-1">
-              {menuItems.map((item) => (
-                <div key={item.id} className="mb-3 relative">
-                  {item.isActive && (
-                    <>
-                      {/* Left side curved connectors */}
-                      <div className="absolute left-[7px] -top-[32px] w-10 h-8 bg-dashboard-bg">
-                        <div className="w-full h-full" style={{ backgroundColor: bgColor }} />
-                      </div>
-                      <div className="absolute left-[7px] -bottom-[32px] w-10 h-8 bg-dashboard-bg">
-                        <div className="w-full h-full" style={{ backgroundColor: bgColor }} />
-                      </div>
-                    </>
-                  )}
+              {menuItems.map((item) => {
+                const isActive = pathname === item.path;
 
-                  <div
-                    className={`flex items-center justify-between px-4 py-2 ${
-                      item.isActive
-                        ? "bg-dashboard-bg text-slate-700 rounded-r-2xl"
-                        : "hover:bg-white/10 rounded-lg"
-                    }`}
-                    onClick={() => item.subItems && toggleSubmenu(item.id)}
-                  >
-                    <div className="flex items-center gap-3">
-                      <img
-                        src={item.icon}
-                        alt={item.title}
-                        className={`w-6 h-6 ${
-                          item.isActive ? 'brightness-0' : 'brightness-0 invert'
-                        }`}
-                        style={
-                          item.isActive
-                            ? {
-                                filter:
-                                  'invert(45%) sepia(99%) saturate(1234%) hue-rotate(346deg) brightness(98%) contrast(96%)',
-                              }
-                            : {}
-                        }
-                      />
-                      <span className="text-sm">{item.title}</span>
+                return (
+                  <div key={item.id} className="mb-3 relative">
+                    {isActive && (
+                      <>
+                        {/* Left Side Curved Connectors */}
+                        <div className="absolute left-0 -top-[32px] w-8 h-8 bg-dashboard-bg">
+                          <div className="w-full h-full rounded-bl-[1.25rem]" style={{ backgroundColor: bgColor }} />
+                        </div>
+                        <div className="absolute left-0 -bottom-[32px] w-8 h-8 bg-dashboard-bg">
+                          <div className="w-full h-full rounded-tl-[1.25rem]" style={{ backgroundColor: bgColor }} />
+                        </div>
+                      </>
+                    )}
+
+                    <div
+                      className={`flex items-center justify-between px-4 py-2 ${
+                        isActive
+                          ? "bg-dashboard-bg text-slate-700 rounded-r-2xl"
+                          : "hover:bg-white/10 rounded-lg"
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <Image
+                          src={item.icon}
+                          alt={item.title}
+                          width={24}
+                          height={24}
+                          className={isActive ? "brightness-0" : "brightness-0 invert"}
+                          style={
+                            isActive
+                              ? {
+                                  filter:
+                                    "invert(45%) sepia(99%) saturate(1234%) hue-rotate(346deg) brightness(98%) contrast(96%)",
+                                }
+                              : {}
+                          }
+                        />
+                        <span className="text-sm">{item.title}</span>
+                      </div>
+                      {item.subItems && (
+                        <span>
+                          <FaChevronRight size={16} />
+                        </span>
+                      )}
                     </div>
                     {item.subItems && (
-                      <span>
-                        {openSubmenus[item.id] ? <FaChevronDown size={16} /> : <FaChevronRight size={16} />}
-                      </span>
+                      <div className="ml-8 mt-1">
+                        {item.subItems.map((sub) => {
+                          const isSubActive = pathname === sub.path;
+                          return (
+                            <div
+                              key={sub.id}
+                              className={`flex items-center gap-3 px-4 py-2 hover:bg-white/10 rounded-lg transition-colors duration-200 ${
+                                isSubActive ? "bg-white/10" : ""
+                              }`}
+                            >
+                              <Image
+                                src="/icons/radio_checked.svg"
+                                alt="subItemIcon"
+                                width={15}
+                                height={15}
+                              />
+                              <span className="text-sm">{sub.title}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
                     )}
                   </div>
-                  {item.subItems && openSubmenus[item.id] && (
-                    <div className="ml-8 mt-1">
-                      {item.subItems.map((sub) => (
-                        <div
-                          key={sub.id}
-                          className={`flex items-center gap-3 px-4 py-2 hover:bg-white/10 rounded-lg transition-colors duration-200 ${
-                            pathname === sub.path ? "bg-white/10" : ""
-                          }`}
-                        >
-                          <img src="/icons/radio_checked.svg" alt="subItemIcon" className="w-4 h-4" />
-                          <span className="text-sm">{sub.title}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              ))}
+                );
+              })}
             </div>
           </div>
         </List>
@@ -148,8 +162,8 @@ const Sidebar: React.FC<SidebarProps> = ({ bgColor, isOpen, onClose }) => {
       {/* Adjust Main Content Area When Sidebar Opens */}
       <style jsx global>{`
         main {
-          margin-right: ${sidebarWidth};
-          transition: margin-right 0.3s ease-in-out; /* Smooth transition */
+          margin-right: ${isOpen ? sidebarWidth : "0px"};
+          transition: margin-right 0.3s ease-in-out;
         }
       `}</style>
     </>

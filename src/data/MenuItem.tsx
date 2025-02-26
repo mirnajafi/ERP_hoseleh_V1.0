@@ -4,21 +4,24 @@ import { MenuItem as MenuItemType } from "@/types/menu";
 
 interface MenuItemProps {
   item: MenuItemType;
+  isActive: boolean; // Active state
+  onClick: () => void; // Click handler
+  bgColor: string; // Background color
 }
 
-export default function MenuItem({ item }: MenuItemProps) {
+export default function MenuItem({ item, isActive, onClick, bgColor }: MenuItemProps) {
   const hasSubItems = item.subItems && item.subItems.length > 0;
 
   return (
     <div className="mb-3 relative">
-      {item.isActive && (
+      {isActive && (
         <>
           {/* Left side curved connectors */}
           <div className="absolute left-[7px] -top-[32px] w-10 h-8 bg-dashboard-bg">
-            <div className="w-full h-full bg-secondry-blue-900 rounded-bl-[1.4rem]" />
+            <div className="w-full h-full" style={{ backgroundColor: bgColor }} />
           </div>
           <div className="absolute left-[7px] -bottom-[32px] w-10 h-8 bg-dashboard-bg">
-            <div className="w-full h-full bg-secondry-blue-900 rounded-tl-[1.25rem]" />
+            <div className="w-full h-full" style={{ backgroundColor: bgColor }} />
           </div>
         </>
       )}
@@ -27,24 +30,35 @@ export default function MenuItem({ item }: MenuItemProps) {
         <Link
           href={item.path || "#"}
           className={`flex items-center gap-3 px-4 mr-1 py-2 ${
-            item.isActive
+            isActive
               ? "bg-dashboard-bg text-slate-700 rounded-r-2xl"
-              : " hover:bg-white/10 rounded-lg text-white"
+              : "hover:bg-white/10 rounded-lg text-white"
           }`}
+          onClick={onClick} // Set this item as active on click
         >
           <Image
             src={item.icon}
             alt={item.title}
             width={24}
             height={24}
-            className={item.isActive ? 'brightness-0' : 'brightness-0 invert'}
-            style={item.isActive ? { filter: 'invert(45%) sepia(99%) saturate(1234%) hue-rotate(346deg) brightness(98%) contrast(96%)' } : {}}
+            className={isActive ? 'brightness-0' : 'brightness-0 invert'}
+            style={
+              isActive
+                ? {
+                    filter:
+                      'invert(45%) sepia(99%) saturate(1234%) hue-rotate(346deg) brightness(98%) contrast(96%)',
+                  }
+                : {}
+            }
           />
           <span className="text-sm">{item.title}</span>
         </Link>
       ) : (
         <div>
-          <div className="flex items-center gap-3 px-4 py-2 text-white">
+          <div
+            className="flex items-center gap-3 px-4 py-2 text-white cursor-pointer"
+            onClick={onClick} // Set this item as active on click
+          >
             <Image
               src={item.icon}
               alt={item.title}

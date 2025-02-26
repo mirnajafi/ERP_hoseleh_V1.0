@@ -14,7 +14,7 @@ export default function SubMenu({ items }: SubMenuProps) {
           <div className="relative">
             {index !== items.length - 1 && (
               <div
-                className="absolute top-[13px] right-[5.5px] h-[177%] w-[2px] bg-white"
+                className="absolute top-[13px] right-[5.5px] h-[177%] w-[2px]"
                 style={{
                   opacity: 0.93 - index * 0.3, // Slightly reduced fade effect
                 }}
