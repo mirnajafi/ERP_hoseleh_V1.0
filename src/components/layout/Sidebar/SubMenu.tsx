@@ -9,15 +9,12 @@ interface SubMenuProps {
 export default function SubMenu({ items }: SubMenuProps) {
   return (
     <div className="mr-4 mt-1 relative">
-      {/* Vertical connecting line - positioned to align with icons */}
-      {/* <div className="absolute left-[7px] h-full top-2 bottom-2 w-[1px] bg-white/10" /> */}
-
       {items.map((item, index) => (
         <div className="relative flex items-center gap-3 px-4" key={item.id}>
           <div className="relative">
             {index !== items.length - 1 && (
               <div
-                className="absolute top-[13px] right-[5.5px] h-[177%] w-[2px] bg-white"
+                className="absolute top-[13px] right-[5.5px] h-[177%] w-[2px]"
                 style={{
                   opacity: 0.93 - index * 0.3, // Slightly reduced fade effect
                 }}
@@ -37,8 +34,7 @@ export default function SubMenu({ items }: SubMenuProps) {
 
           <Link
             href={item.path}
-            // className="flex items-center gap-3 px-4 py-2 text-white/70 hover:bg-white/10 rounded-lg relative"
-            className="flex items-center gap-3 pr-1 py-2 text-white hover:bg-white/10 rounded-lg w-full"
+            className="flex items-center gap-3 pr-1 py-2 text-black hover:bg-white/10 rounded-lg w-full"
             style={{
               opacity: 0.93 - index * 0.3, // Slightly reduced fade effect
             }}

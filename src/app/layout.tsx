@@ -4,6 +4,7 @@ import Header from "@/components/layout/Header";
 import Sidebar from "@/components/layout/Sidebar/Sidebar";
 import "@/app/globals.css";
 
+
 export const metadata: Metadata = {
   title: "دکتر حوصله",
   description: "بنیاد سلامت دکتر حوصله",
@@ -13,11 +14,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fa" dir="rtl">
       <body className="bg-dashboard-bg min-h-screen">
+        {/* Header includes SidebarToggle, so no need to add Sidebar separately */}
         <Header />
-        <div className="flex">
-          <Sidebar />
-          <main className="flex-grow p-6 mr-64 mt-16">{children}</main>
-        </div>
+        {/* Main Content Area */}
+        <main className="transition-all duration-300 mt-16 p-6">
+          {children}
+        </main>
+
       </body>
     </html>
   );

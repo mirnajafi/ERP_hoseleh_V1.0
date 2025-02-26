@@ -10,7 +10,7 @@ export interface MenuItem {
   title: string;
   icon: string;
   path?: string;
-  isActive?: boolean;
+  isActive: boolean;
   subItems?: SubMenuItem[];
 }
 
