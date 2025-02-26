@@ -1,0 +1,22 @@
+'use client'; // اضافه کردن این خط برای فعال کردن کامپوننت در Client-side
+
+import React from "react";
+
+interface BProps {
+    label: string;
+}
+
+const transparentBtn: React.FC<DropdownProps> = ({ label }) => {
+
+    return (
+        <button className="relative inline-block text-left w-full xl:w-1/5 ml-3 max-w-[200px]">
+            {label}<svg width="14" height="15" viewBox="0 0 14 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M7 3.41666V11.5833" stroke="#01A384" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M2.91602 7.5H11.0827" stroke="#01A384" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+        </button>
+    );
+};
+
+export default transparentBtn;
