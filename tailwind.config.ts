@@ -11,9 +11,9 @@ const config: Config = {
     extend: {
       colors: {
         "deep-blue": "#1E3A8A",
-        "green": "#10B981",
+        "green": "#8BC34A",
         "orange": "#F97316",
-        "red": "#EF4444",
+        "red": "#E02D40",
         "yellow": "#FBBF24",
         background: "var(--background)",
         foreground: "var(--foreground)",

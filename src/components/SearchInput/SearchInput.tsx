@@ -12,7 +12,7 @@ export default function SearchInput({ placeholder = "جستجو کن...", classN
       <input
         type="text"
         placeholder={placeholder}
-        className={`w-full h-9 bg-[#364972] rounded-lg px-4 text-white/70 text-sm focus:outline-none ${className}`}
+        className={`w-full h-9 bg-white bg-opacity-30 rounded-lg px-4 text-white placeholder:text-white text-sm focus:outline-none ${className}`}
       />
       <img
         src="/icons/left-icon.svg"
