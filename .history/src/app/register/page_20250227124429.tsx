@@ -32,11 +32,9 @@ const Register = () => {
 
     const [selectedDay, setSelectedDay] = useState<string>("");
 
-    const handleDaySelect = (day: string) => {
-        setSelectedDay(day);
-    };
-
-    
+  const handleDaySelect = (day: string) => {
+    setSelectedDay(day);
+  };
     const tabItems = [
         {
             label: "اطلاعات فردی", content:

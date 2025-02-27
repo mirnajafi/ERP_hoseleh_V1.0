@@ -5,14 +5,11 @@ import Dropdown from "@/components/dropdown/dropdown";
 import FileUploader from "@/components/fileUploader/fileUploader";
 import PageHeader from "@/components/formHeader/formHeader";
 import Tabs from "@/components/formTab/formTab";
-import CopyIcon from "@/components/icons/copy";
-import TrashIcon from "@/components/icons/trash";
 import InformationUserBox from "@/components/informationUserBox/informationUserBox";
 import Input from "@/components/input/input";
 import InputDate from "@/components/inputDate/inputDate";
 import InputDescription from "@/components/inputDescription/inputDescription";
 import TransparentBtn from "@/components/transparentBtn/transparentBtn";
-import WeekTable from "@/components/weekTable/weekTable";
 import { useState } from "react";
 import Select from "react-select";
 
@@ -28,15 +25,6 @@ const Register = () => {
     const handleFileUpload = (files: File[]) => {
         console.log("فایل‌های آپلود شده:", files);
     };
-
-
-    const [selectedDay, setSelectedDay] = useState<string>("");
-
-    const handleDaySelect = (day: string) => {
-        setSelectedDay(day);
-    };
-
-    
     const tabItems = [
         {
             label: "اطلاعات فردی", content:
@@ -453,7 +441,7 @@ const Register = () => {
                         <TransparentBtn label='افزودن' />
 
                     </div>
-                    <div className="flex flex-col  w-ful xl:w-1/3 my-4">
+                    <div className="flex flex-col  w-ful xl:w-1/3 ئغ-2">
                         <label className="mb-2 text-xs font-bold text-gray-700">مربی های پیشنهادی ارزیاب</label>
                         <Select
                             isMulti
@@ -482,19 +470,6 @@ const Register = () => {
                             }}
                         />
                     </div>
-
-                    <div className="flex flex-row  my-4 items-center">
-                        <label className="mb-2 text-xs font-bold text-gray-700 ml-2">برنامه تمرینی</label>
-                        <button className="bg-[#FFF6F7] h-10 w-10 border rounded-lg border-[#FF7101] flex justify-center items-center ml-2"><TrashIcon width={25} height={25} /></button>
-                        <button className="bg-[#FFF6F7] h-10 w-10 border rounded-lg border-[#FF7101] flex justify-center items-center"><CopyIcon width={25} height={25} /></button>
-
-                    </div>
-
-                    <WeekTable
-                        apiUrl="https://api.majidvalizadeh.com/jalali/next7" // URL برای API تاریخ‌ها
-                        selectedDay={selectedDay}
-                        onDaySelect={handleDaySelect}
-                    />
 
                 </div>
         },

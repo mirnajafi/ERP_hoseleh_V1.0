@@ -12,7 +12,6 @@ import Input from "@/components/input/input";
 import InputDate from "@/components/inputDate/inputDate";
 import InputDescription from "@/components/inputDescription/inputDescription";
 import TransparentBtn from "@/components/transparentBtn/transparentBtn";
-import WeekTable from "@/components/weekTable/weekTable";
 import { useState } from "react";
 import Select from "react-select";
 
@@ -28,15 +27,6 @@ const Register = () => {
     const handleFileUpload = (files: File[]) => {
         console.log("فایل‌های آپلود شده:", files);
     };
-
-
-    const [selectedDay, setSelectedDay] = useState<string>("");
-
-    const handleDaySelect = (day: string) => {
-        setSelectedDay(day);
-    };
-
-    
     const tabItems = [
         {
             label: "اطلاعات فردی", content:
@@ -491,10 +481,10 @@ const Register = () => {
                     </div>
 
                     <WeekTable
-                        apiUrl="https://api.majidvalizadeh.com/jalali/next7" // URL برای API تاریخ‌ها
-                        selectedDay={selectedDay}
-                        onDaySelect={handleDaySelect}
-                    />
+        apiUrl="https://api.majidvalizadeh.com/jalali/next7" // URL برای API تاریخ‌ها
+        selectedDay={selectedDay}
+        onDaySelect={handleDaySelect}
+      />
 
                 </div>
         },

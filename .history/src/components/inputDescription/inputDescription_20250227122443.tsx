@@ -17,7 +17,7 @@ const InputDescription: React.FC<InputProps> = ({
   placeholder,
   required = false,
   className = "",
-  height
+  height=''
 }) => {
   return (
     <div className={`w-full xl:w-1/2 ml-3 max-w-[500px] ${className}`}>

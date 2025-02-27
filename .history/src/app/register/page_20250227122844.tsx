@@ -5,14 +5,11 @@ import Dropdown from "@/components/dropdown/dropdown";
 import FileUploader from "@/components/fileUploader/fileUploader";
 import PageHeader from "@/components/formHeader/formHeader";
 import Tabs from "@/components/formTab/formTab";
-import CopyIcon from "@/components/icons/copy";
-import TrashIcon from "@/components/icons/trash";
 import InformationUserBox from "@/components/informationUserBox/informationUserBox";
 import Input from "@/components/input/input";
 import InputDate from "@/components/inputDate/inputDate";
 import InputDescription from "@/components/inputDescription/inputDescription";
 import TransparentBtn from "@/components/transparentBtn/transparentBtn";
-import WeekTable from "@/components/weekTable/weekTable";
 import { useState } from "react";
 import Select from "react-select";
 
@@ -28,15 +25,6 @@ const Register = () => {
     const handleFileUpload = (files: File[]) => {
         console.log("فایل‌های آپلود شده:", files);
     };
-
-
-    const [selectedDay, setSelectedDay] = useState<string>("");
-
-    const handleDaySelect = (day: string) => {
-        setSelectedDay(day);
-    };
-
-    
     const tabItems = [
         {
             label: "اطلاعات فردی", content:
@@ -409,92 +397,40 @@ const Register = () => {
                         <TransparentBtn label='افزودن' />
                     </div>
                     <div className="flex flex-col xl:flex-row w-full xl:items-end xl:justify-right ">
-
+                       
                         <InputDescription
                             label="نتیجه ارزیابی و مشاوره"
                             value={''}
                             placeholder="توضیحات..."
-                            className="xl:w-1/2 max-w-[500px]"
+                            className="xl:w-1/4 max-w-[500px]"
                             height="h-24"
                         />
 
                     </div>
 
-                    <div className="flex flex-col xl:flex-row w-full xl:items-end xl:justify-right ">
+                    <div className="w-full xl:py-2 my-0 flex flex-col xl:flex-row">
                         <Dropdown
-                            label="نوع کلاس"
+                            label=""
                             options={["گزینه 1", "گزینه 2", "گزینه 3"]}
                             onSelect={handleSelect}
                         />
                         <Dropdown
-                            label="تعداد کل جلسات"
+                            label=""
+                            options={["گزینه 1", "گزینه 2", "گزینه 3"]}
+                            onSelect={handleSelect}
+                        />
+                         <Dropdown
+                            label=""
                             options={["گزینه 1", "گزینه 2", "گزینه 3"]}
                             onSelect={handleSelect}
                         />
                         <Dropdown
-                            label="تعداد ماه"
+                            label=""
                             options={["گزینه 1", "گزینه 2", "گزینه 3"]}
                             onSelect={handleSelect}
-                        />
-                        <Dropdown
-                            label="تعداد جلسه در هفته"
-                            options={["گزینه 1", "گزینه 2", "گزینه 3"]}
-                            onSelect={handleSelect}
-                        />
-                        <TransparentBtn label='افزودن' />
-
-                    </div>
-                    <div className="flex flex-col xl:flex-row w-full xl:items-end xl:justify-right ">
-                        <Dropdown
-                            label="سایر خدمات"
-                            options={["گزینه 1", "گزینه 2", "گزینه 3"]}
-                            onSelect={handleSelect}
-                        />
-                        <TransparentBtn label='افزودن' />
-
-                    </div>
-                    <div className="flex flex-col  w-ful xl:w-1/3 my-4">
-                        <label className="mb-2 text-xs font-bold text-gray-700">مربی های پیشنهادی ارزیاب</label>
-                        <Select
-                            isMulti
-                            options={[
-                                { value: "apple", label: "سیب" },
-                                { value: "banana", label: "موز" },
-                                { value: "orange", label: "پرتقال" },
-                                { value: "grape", label: "انگور" },
-                                { value: "watermelon", label: "هندوانه" },
-                            ]}
-                            value={selectedOptions}
-                            onChange={setSelectedOptions}
-                            placeholder="یک یا چند مورد را انتخاب کنید..."
-                            noOptionsMessage={() => "موردی یافت نشد"}
-                            isClearable
-                            isSearchable
-                            className="text-xs "
-                            styles={{
-                                control: (base) => ({
-                                    ...base,
-                                    borderRadius: "8px",
-                                    borderColor: "#ccc",
-                                    boxShadow: "none",
-                                    "&:hover": { borderColor: "#888" },
-                                }),
-                            }}
                         />
                     </div>
 
-                    <div className="flex flex-row  my-4 items-center">
-                        <label className="mb-2 text-xs font-bold text-gray-700 ml-2">برنامه تمرینی</label>
-                        <button className="bg-[#FFF6F7] h-10 w-10 border rounded-lg border-[#FF7101] flex justify-center items-center ml-2"><TrashIcon width={25} height={25} /></button>
-                        <button className="bg-[#FFF6F7] h-10 w-10 border rounded-lg border-[#FF7101] flex justify-center items-center"><CopyIcon width={25} height={25} /></button>
-
-                    </div>
-
-                    <WeekTable
-                        apiUrl="https://api.majidvalizadeh.com/jalali/next7" // URL برای API تاریخ‌ها
-                        selectedDay={selectedDay}
-                        onDaySelect={handleDaySelect}
-                    />
 
                 </div>
         },

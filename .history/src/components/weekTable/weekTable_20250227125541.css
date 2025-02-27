@@ -1,0 +1,22 @@
+.radio-btn {
+    appearance: none; 
+    width: 8px;
+    height: 8px; 
+    border-radius: 2px;
+    background-color: white;
+    margin: 0; 
+    position: relative;
+  }
+ 
+  
+  .radio-btn:checked::after {
+    content: ""; 
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: white;
+  }
+  

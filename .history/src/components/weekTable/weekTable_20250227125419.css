@@ -1,0 +1,27 @@
+.radio-btn {
+    appearance: none; 
+    width: 8px;
+    height: 8px; /* ارتفاع رادیو باتن */
+    border: 2px solid #fff; /* حاشیه سفید برای رادیو باتن */
+    border-radius: 2px; /* گوشه‌های گرد برای شکل مستطیلی */
+    background-color: transparent; /* پس‌زمینه شفاف */
+    margin: 0; /* حذف حاشیه اضافی */
+    position: relative; /* برای چیدن داخل رادیو باتن */
+  }
+  
+  .radio-btn:checked {
+    background-color: #FF7101; /* رنگ پس‌زمینه وقتی رادیو باتن انتخاب می‌شود */
+    border-color: #FF7101; /* رنگ حاشیه زمانی که انتخاب شده */
+  }
+  
+  .radio-btn:checked::after {
+    content: ""; /* افزودن چک کردن */
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: white;
+  }
+  

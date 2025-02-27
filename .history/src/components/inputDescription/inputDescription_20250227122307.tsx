@@ -27,7 +27,7 @@ const InputDescription: React.FC<InputProps> = ({
         value={value}
         placeholder={placeholder}
         required={required}
-        className={`block w-full h-8 ${height} p-2 resize-none max-w-200 overflow-hidden text-xs border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500`}
+        className="block w-full h-8 p-2 resize-none max-w-200 overflow-hidden text-xs border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
       />
     </div>
   );
