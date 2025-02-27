@@ -26,7 +26,7 @@ const Dropdown: React.FC<DropdownProps> = ({ label, options, onSelect }) => {
 
             <button
                 type="button"
-                className="inline-flex z-5 text-xs justify-between items-center w-full lg:max-w-200 p-2  rounded-md border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 z-10"
+                className="inline-flex z-5 text-xs justify-between items-center w-full max-w-200 p-2  rounded-md border border-gray-300 bg-white text-sm font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 z-10"
                 onClick={toggleDropdown}
             >
                 انتخاب کنید

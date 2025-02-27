@@ -366,7 +366,7 @@ const Register = () => {
                             noOptionsMessage={() => "موردی یافت نشد"}
                             isClearable
                             isSearchable
-                            className="text-xs "
+                            className="text-xs"
                             styles={{
                                 control: (base) => ({
                                     ...base,
@@ -378,7 +378,7 @@ const Register = () => {
                             }}
                         />
                     </div>
-                    <div className="flex flex-col xl:flex-row w-full xl:items-end xl:justify-right ">
+                    <div className="flex flex-col xl:flex-row w-full xl:items-center xl:justify-right ">
                         <Input
                             label="تست ها"
                             type="text"

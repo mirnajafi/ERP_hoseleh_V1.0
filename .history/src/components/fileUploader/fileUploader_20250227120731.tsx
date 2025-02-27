@@ -31,7 +31,7 @@ const FileUploader: React.FC<FileUploaderProps> = ({
     });
 
     return (
-        <div className="lg:w-1/6 max-w-[150px] cursor-pointer my-4 lg:my-0 lg:mx-10" {...getRootProps()}>
+        <div className="lg:w-1/6 max-w-[150px] cursor-pointer my-4 lg:my lg:mx-10" {...getRootProps()}>
             <input {...getInputProps()} />
             <div className="flex flex-row justify-between items-center">
                 <p className="text-xs font-bold">{label}</p>

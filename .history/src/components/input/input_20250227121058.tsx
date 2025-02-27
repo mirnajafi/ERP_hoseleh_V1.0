@@ -22,7 +22,7 @@ const Input: React.FC<InputProps> = ({
   className = "",
 }) => {
   return (
-    <div className={`w-full xl:w-1/5 ml-3 my-2 xl:my-0 lg"max-w-[200px] ${className}`}>
+    <div className={`w-full xl:w-1/5 ml-3 my-2 xl:my-0 max-w-[200px] ${className}`}>
       <label className="block text-xs text-gray-700  xl:mt-2 mb-2  font-bold">{label}</label>
 
       <input

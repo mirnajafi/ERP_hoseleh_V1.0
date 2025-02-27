@@ -38,3 +38,4 @@ const Input: React.FC<InputProps> = ({
 };
 
 export default Input;
+p-2

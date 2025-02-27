@@ -366,7 +366,7 @@ const Register = () => {
                             noOptionsMessage={() => "موردی یافت نشد"}
                             isClearable
                             isSearchable
-                            className="text-xs "
+                            className="text-xs"
                             styles={{
                                 control: (base) => ({
                                     ...base,
