@@ -11,7 +11,6 @@ import InformationUserBox from "@/components/informationUserBox/informationUserB
 import Input from "@/components/input/input";
 import InputDate from "@/components/inputDate/inputDate";
 import InputDescription from "@/components/inputDescription/inputDescription";
-import PersonalInfo from "@/components/personalInfo/personalInfo";
 import TransparentBtn from "@/components/transparentBtn/transparentBtn";
 import WeekTable from "@/components/weekTable/weekTable";
 import { useState } from "react";
@@ -40,7 +39,8 @@ const Register = () => {
 
     const tabItems = [
         {
-            label: "اطلاعات فردی", content:<PersonalInfo/>
+            label: "اطلاعات فردی", content:<Per
+           
         },
         {
             label: "تشخیص ارزیاب", content:

@@ -41,6 +41,7 @@ const Register = () => {
     const tabItems = [
         {
             label: "اطلاعات فردی", content:<PersonalInfo/>
+           
         },
         {
             label: "تشخیص ارزیاب", content:
