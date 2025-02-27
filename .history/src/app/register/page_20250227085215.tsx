@@ -32,7 +32,7 @@ const register = () => {
                         />
                     </div>
 
-                    <div className="w-full xl:py-2  my-0 flex flex-col xl:flex-row xl:items-end">
+                    <div className="w-full xl:py-2  my-0 flex flex-col xl:flex-row xl:justify-">
                         <Input
                             label="نام و نام خانوادگی"
                             type="tsxt"

@@ -32,7 +32,7 @@ const register = () => {
                         />
                     </div>
 
-                    <div className="w-full xl:py-2  my-0 flex flex-col xl:flex-row xl:items-end">
+                    <div className="w-full xl:py-2  my-0 flex flex-col xl:flex-row">
                         <Input
                             label="نام و نام خانوادگی"
                             type="tsxt"
@@ -173,7 +173,7 @@ const register = () => {
                         />
                     </div>
 
-                    <div className="w-full xl:py-2 my-0  flex flex-col xl:flex-row xl:justify-start xl:items-end">
+                    <div className="w-full xl:py-2 my-0  flex flex-col xl:flex-row xl:justify-center xl:items-end">
                         <Dropdown
                             label="سابقه آسیب های مفصلی"
                             options={["ندارد", "دارد"]}
