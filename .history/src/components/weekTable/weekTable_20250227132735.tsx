@@ -24,6 +24,19 @@ const WeekTable: React.FC<WeekTableProps> = ({ apiUrl, selectedDay, onDaySelect 
     const [dates, setDates] = useState<string[]>([]);
     const [showRadios, setShowRadios] = useState<boolean[]>(Array(weekDays.length).fill(false)); 
 
+    useEffect(() => {
+        const fetchDates = async () => {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                setDates(data.dates); 
+            } catch (error) {
+                console.error("Error fetching dates:", error);
+            }
+        };
+
+        fetchDates();
+    }, [apiUrl]);
 
     const handleShowRadio = (index: number) => {
         const updatedShowRadios = [...showRadios];
@@ -32,7 +45,7 @@ const WeekTable: React.FC<WeekTableProps> = ({ apiUrl, selectedDay, onDaySelect 
     };
 
     return (
-        <div className="w-full overflow-x-auto bg-white text-xs ">
+        <div className="w-full overflow-x-auto bg-white text-xs week-table">
             <table className="w-full border-collapse border border-gray-300">
                 <thead>
                     <tr>
@@ -47,6 +60,7 @@ const WeekTable: React.FC<WeekTableProps> = ({ apiUrl, selectedDay, onDaySelect 
                     <tr>
                         {weekDays.map((item, index) => (
                             <td key={index} className="border px-4 py-2 text-center">
+                                {/* برای ستون 0، فقط تاریخ را نمایش می‌دهیم */}
                                 {index === 0 ? (
                                     <span className="font-bold">برنامه تمرینی</span>
                                 ) : (
@@ -58,7 +72,7 @@ const WeekTable: React.FC<WeekTableProps> = ({ apiUrl, selectedDay, onDaySelect 
                                             {showRadios[index] ? '-' : '+'}
                                         </button>
                                         {showRadios[index] && (
-                                            <div className="mt-2 bg-[#729FFE] p-2 flex flex-col text-white items-start border rounded-[8px] min-w-[100px]">
+                                            <div className="mt-2 bg-[#729FFE] p-2 flex flex-col text-white items-start border rounded-[8px]">
                                                 <div className="w-full flex justify-end">
                                                     <input
                                                         type="radio"
@@ -66,7 +80,7 @@ const WeekTable: React.FC<WeekTableProps> = ({ apiUrl, selectedDay, onDaySelect 
                                                         value={item.day}
                                                         checked={selectedDay === item.day}
                                                         onChange={() => onDaySelect(item.day)}
-                                                        className="radio-btn w-10 h-10 mt-0"
+                                                        className="radio-btn w-8 h-8 mt-0"
                                                     />
                                                 </div>
                                                 <span className="text-white mt-2">نام برنامه: بازتوانی ACL</span>

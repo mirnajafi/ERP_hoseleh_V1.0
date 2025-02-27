@@ -24,6 +24,19 @@ const WeekTable: React.FC<WeekTableProps> = ({ apiUrl, selectedDay, onDaySelect 
     const [dates, setDates] = useState<string[]>([]);
     const [showRadios, setShowRadios] = useState<boolean[]>(Array(weekDays.length).fill(false)); 
 
+    useEffect(() => {
+        const fetchDates = async () => {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                setDates(data.dates); 
+            } catch (error) {
+                console.error("Error fetching dates:", error);
+            }
+        };
+
+        fetchDates();
+    }, [apiUrl]);
 
     const handleShowRadio = (index: number) => {
         const updatedShowRadios = [...showRadios];

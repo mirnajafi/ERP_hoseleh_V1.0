@@ -24,6 +24,19 @@ const WeekTable: React.FC<WeekTableProps> = ({ apiUrl, selectedDay, onDaySelect 
     const [dates, setDates] = useState<string[]>([]);
     const [showRadios, setShowRadios] = useState<boolean[]>(Array(weekDays.length).fill(false)); 
 
+    useEffect(() => {
+        const fetchDates = async () => {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                setDates(data.dates); 
+            } catch (error) {
+                console.error("Error fetching dates:", error);
+            }
+        };
+
+        fetchDates();
+    }, [apiUrl]);
 
     const handleShowRadio = (index: number) => {
         const updatedShowRadios = [...showRadios];
@@ -47,6 +60,7 @@ const WeekTable: React.FC<WeekTableProps> = ({ apiUrl, selectedDay, onDaySelect 
                     <tr>
                         {weekDays.map((item, index) => (
                             <td key={index} className="border px-4 py-2 text-center">
+                                {/* برای ستون 0، فقط تاریخ را نمایش می‌دهیم */}
                                 {index === 0 ? (
                                     <span className="font-bold">برنامه تمرینی</span>
                                 ) : (
