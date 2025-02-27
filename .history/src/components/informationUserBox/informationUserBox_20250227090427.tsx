@@ -1,0 +1,28 @@
+'use client';  // اضافه کردن این خط برای فعال کردن کامپوننت در Client-side
+
+import React from "react";
+
+interface InformationUserProps {
+    name: string;
+    phoneNumber: number;
+    evaluator: string;
+    age: string;
+    imageSrc: string;
+}
+
+const InformationUserBox: React.FC<InformationUserProps> = ({
+    name,
+    phoneNumber,
+    evaluator,
+    age,
+    imageSrc
+}) => {
+    return (
+        <div className='w-full'>
+
+
+        </div>
+    );
+};
+
+export default InformationUserBox;

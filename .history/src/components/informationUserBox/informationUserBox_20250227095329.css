@@ -1,0 +1,10 @@
+.containInfoBox {
+  background: #0f9d58;
+  color: white;
+  justify-content: right;
+  align-items: center;
+pad
+}
+.imageUser{
+    border-radius: 100%;
+}
