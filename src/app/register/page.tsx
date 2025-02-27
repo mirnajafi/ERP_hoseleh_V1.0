@@ -7,7 +7,7 @@ import Tabs from "@/components/formTab/formTab";
 import Input from "@/components/input/input";
 import InputDate from "@/components/inputDate/inputDate";
 import InputDescription from "@/components/inputDescription/inputDescription";
-import TransparentBtn from "@/components/transparentBtn/TransparentBtn";
+import TransparentBtn from "@/components/transparentBtn/transparentBtn";
 
 const register = () => {
 
