@@ -10,7 +10,7 @@ interface MenuItemProps {
 }
 
 export default function MenuItem({ item, isActive, onClick, bgColor }: MenuItemProps) {
-  const hasSubItems = item.subItems && item.subItems.length > 0;
+  // const hasSubItems = item.subItems && item.subItems.length > 0;
 
   return (
     <div className="mb-3 relative">

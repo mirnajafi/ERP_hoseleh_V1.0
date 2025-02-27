@@ -1,8 +1,6 @@
 "use client";
 import { Drawer, List, Divider, useMediaQuery } from "@mui/material";
-import { FaChevronRight } from "react-icons/fa";
 import { usePathname, useRouter } from "next/navigation";
-import Image from "next/image"; 
 import UserSection from "../layout/Sidebar/UserSection";
 import { menuItems } from "@/data/menuItems";
 import MenuItem from "@/data/MenuItem";
