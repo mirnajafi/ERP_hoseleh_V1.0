@@ -10,6 +10,8 @@ import RecognitionEvaluation from "@/components/recognitionEvaluation/recognitio
 const Register = () => {
 
 
+
+
     const tabItems = [
         {
             label: "اطلاعات فردی", content: <PersonalInfo />
@@ -37,9 +39,8 @@ const Register = () => {
                 onEdit={() => console.log("ویرایش")}
                 onDelete={() => console.log("حذف")}
             />
-
+            
             <Tabs tabs={tabItems} />
-
         </div>
     );
 };

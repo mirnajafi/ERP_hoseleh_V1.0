@@ -10,6 +10,8 @@ import RecognitionEvaluation from "@/components/recognitionEvaluation/recognitio
 const Register = () => {
 
 
+
+
     const tabItems = [
         {
             label: "اطلاعات فردی", content: <PersonalInfo />
@@ -31,15 +33,12 @@ const Register = () => {
 
     return (
         <div className="w-full flex flex-col">
-
             <PageHeader
                 title="مراحل ثبت نام کاربر"
                 onEdit={() => console.log("ویرایش")}
                 onDelete={() => console.log("حذف")}
             />
-
             <Tabs tabs={tabItems} />
-
         </div>
     );
 };

@@ -10,6 +10,8 @@ import RecognitionEvaluation from "@/components/recognitionEvaluation/recognitio
 const Register = () => {
 
 
+
+
     const tabItems = [
         {
             label: "اطلاعات فردی", content: <PersonalInfo />

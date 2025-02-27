@@ -1,21 +1,34 @@
-'use client';
+'use client';  // اضافه کردن این خط برای فعال کردن کامپوننت در Client-side
 
 
+import Dropdown from "@/components/dropdown/dropdown";
+import FileUploader from "@/components/fileUploader/fileUploader";
 import PageHeader from "@/components/formHeader/formHeader";
 import Tabs from "@/components/formTab/formTab";
+import CopyIcon from "@/components/icons/copy";
+import TrashIcon from "@/components/icons/trash";
+import InformationUserBox from "@/components/informationUserBox/informationUserBox";
+import Input from "@/components/input/input";
+import InputDate from "@/components/inputDate/inputDate";
+import InputDescription from "@/components/inputDescription/inputDescription";
 import PersonalInfo from "@/components/personalInfo/personalInfo";
-import RecognitionEvaluation from "@/components/recognitionEvaluation/recognitionEvaluation";
-
+import TransparentBtn from "@/components/transparentBtn/transparentBtn";
+import WeekTable from "@/components/weekTable/weekTable";
+import { useState } from "react";
+import Select from "react-select";
 
 const Register = () => {
 
 
+
+
     const tabItems = [
         {
-            label: "اطلاعات فردی", content: <PersonalInfo />
+            label: "اطلاعات فردی", content:<PersonalInfo/>
         },
         {
-            label: "تشخیص ارزیاب", content: <RecognitionEvaluation />
+            label: "تشخیص ارزیاب", content:
+               
         },
         { label: "تجویز پزشک", content: <div></div> },
         { label: "ثبت نام", content: <div></div> },
@@ -32,6 +45,8 @@ const Register = () => {
     return (
         <div className="w-full flex flex-col">
 
+
+
             <PageHeader
                 title="مراحل ثبت نام کاربر"
                 onEdit={() => console.log("ویرایش")}
@@ -39,6 +54,7 @@ const Register = () => {
             />
 
             <Tabs tabs={tabItems} />
+
 
         </div>
     );
