@@ -17,7 +17,7 @@ const LeftSideBox: React.FC<BoxProps> = ({
     className
 }) => {
     return (
-        <div className={`w-full flex flex-col lg:flex-row containLeftSideBox text-xs mt-2 ${className}`}>
+        <div className={`w-full flex flex-col lg:flex-row containLeftSideBox text-xs ${className}`}>
             <div className="flex flex-col mr-4">
                 <div className="font-bold flex flex-row items-center special-margin"><CircleIcon width={10} height={10}/> {title}</div>
                 <div className="flex flex-col justify-center items-start  mt-2">

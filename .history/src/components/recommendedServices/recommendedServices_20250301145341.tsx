@@ -18,7 +18,7 @@ const RecommendedServices: React.FC<BoxProps> = ({
             <div className="flex flex-col mr-4 w-full">
                 <div className="font-bold flex flex-row items-center special-margin"><CircleIcon fillColor="#4CAF50" color="white" width={10} height={10} /> {title}</div>
 
-                <div className="flex flex-col text-xs mt-2">
+                <div className="flex flex-col text-xs">
                     <span className="ml-10 flex flex-row w-full justify-between items-center">تعداد کل جلسات </span>
                     <span className="ml-10 flex flex-row w-full justify-between items-center">تعداد ماه</span>
 
