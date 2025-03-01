@@ -1,3 +1,4 @@
+import Select from "react-select/base";
 import WeekTable from "../weekTable/weekTable";
 import TransparentBtn from "../transparentBtn/transparentBtn";
 import Dropdown from "../dropdown/dropdown";

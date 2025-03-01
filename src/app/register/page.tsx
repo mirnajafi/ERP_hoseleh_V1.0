@@ -3,9 +3,16 @@
 
 import PageHeader from "@/components/formHeader/formHeader";
 import Tabs from "@/components/formTab/formTab";
+<<<<<<< HEAD
 import PersonalInfo from "@/components/personalInfo/personalInfo";
 import RecognitionEvaluator from "@/components/recognitionEvaluator/recognitionEvaluator";
 import Registration from "@/components/registration/registration";
+=======
+import Input from "@/components/input/input";
+import InputDate from "@/components/inputDate/inputDate";
+import InputDescription from "@/components/inputDescription/inputDescription";
+import TransparentBtn from "@/components/transparentBtn/transparentBtn";
+>>>>>>> d6a410e50ce4c8ee5d960d537fd3c3f66e93fc3c
 
 
 const Register = () => {

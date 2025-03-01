@@ -10,19 +10,33 @@ interface MenuItemProps {
 }
 
 export default function MenuItem({ item, isActive, onClick, bgColor }: MenuItemProps) {
-  const hasSubItems = item.subItems && item.subItems.length > 0;
+  // const hasSubItems = item.subItems && item.subItems.length > 0;
 
   return (
     <div className="mb-3 relative">
       {isActive && (
                       <>
                         {/* Left Side Curved Connectors */}
+                        <div className="absolute left-0 -top-[32px] w-8 h-8 bg-dashboard-bg ml-2">
+                        <div style={{ width: '100%', height: '100%', borderRadius: '0 0 0 1.25rem', backgroundColor: bgColor }} />
+                        </div>
+                        <div className="absolute left-0 -bottom-[32px] w-8 h-8 bg-dashboard-bg ml-2">
+                        <div style={{ width: '100%', height: '100%', borderRadius: '1.25rem 0 0 0', backgroundColor: bgColor }} />
+                        </div>
+                        {/* 
+                        <div style={{ position: 'absolute', left: '0', marginLeft: '0.25rem', top: '-32px', width: '2rem', height: '2rem', backgroundColor: 'var(--dashboard-bg)' }}>
+                         <div style={{ width: '100%', height: '100%', borderRadius: '0 0 0 1.25rem', backgroundColor: bgColor }} />
+                         </div>
+                         <div style={{ position: 'absolute', left: '0', marginLeft: '0.25rem', bottom: '-32px', width: '2rem', height: '2rem', backgroundColor: 'var(--dashboard-bg)' }}>
+                         <div style={{ width: '100%', height: '100%', borderRadius: '1.25rem 0 0 0', backgroundColor: bgColor }} />
+                        </div>
+
                         <div className="absolute left-0 -top-[32px] w-8 h-8 bg-dashboard-bg">
                           <div className="w-full h-full rounded-bl-[1.25rem]" style={{ backgroundColor: bgColor }} />
                         </div>
                         <div className="absolute left-0 -bottom-[32px] w-8 h-8 bg-dashboard-bg">
                           <div className="w-full h-full rounded-tl-[1.25rem]" style={{ backgroundColor: bgColor }} />
-                        </div>
+                        </div> */}
                       </>
                       
       )}

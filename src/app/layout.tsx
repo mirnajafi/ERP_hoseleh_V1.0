@@ -1,6 +1,10 @@
 /* eslint-disable @next/next/no-img-element */
 import type { Metadata } from "next";
 import Header from "@/components/layout/Header";
+<<<<<<< HEAD
+=======
+// import Sidebar from "@/components/layout/Sidebar/Sidebar";
+>>>>>>> d6a410e50ce4c8ee5d960d537fd3c3f66e93fc3c
 import "@/app/globals.css";
 
 

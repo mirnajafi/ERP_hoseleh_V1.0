@@ -15,8 +15,8 @@ const Header = () => {
   const getBgColor = () => {
     if (pathname === "/") return "bg-secondry-blue-900"; // Home page
     if (pathname === "/register") return "bg-green"; // Register page
-    if (pathname === "/classification") return "bg-orange"; // Classification page
-    if (pathname === "/athletes") return "bg-red"; // Athletes page
+    if (pathname.startsWith("/classification")) return "bg-red"; // Classification page
+    if (pathname === "/athletes") return "bg-orange"; // Athletes page
     return "bg-secondry-blue-900"; // Default color
   };
 

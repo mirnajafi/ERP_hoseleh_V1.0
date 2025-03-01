@@ -1,6 +1,9 @@
+import Select from "react-select/base";
 import WeekTable from "../weekTable/weekTable";
 import TransparentBtn from "../transparentBtn/transparentBtn";
 import Dropdown from "../dropdown/dropdown";
+import InputDescription from "../inputDescription/inputDescription";
+import FileUploader from "../fileUploader/fileUploader";
 import Input from "../input/input";
 import InformationUserBox from "../informationUserBox/informationUserBox";
 import { useState } from "react";
@@ -20,7 +23,9 @@ const Registration = () => {
     const handleSelect = (option: string) => {
         console.log("انتخاب شده:", option);
     };
-
+    const handleFileUpload = (files: File[]) => {
+        console.log("فایل‌های آپلود شده:", files);
+    };
 
     const [selected, setSelected] = useState<string>("option1");
 

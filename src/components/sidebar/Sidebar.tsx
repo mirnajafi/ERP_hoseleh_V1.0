@@ -1,8 +1,6 @@
 "use client";
 import { Drawer, List, Divider, useMediaQuery } from "@mui/material";
-import { FaChevronRight } from "react-icons/fa";
 import { usePathname, useRouter } from "next/navigation";
-import Image from "next/image"; 
 import UserSection from "../layout/Sidebar/UserSection";
 import { menuItems } from "@/data/menuItems";
 import MenuItem from "@/data/MenuItem";
@@ -10,9 +8,9 @@ import MenuItem from "@/data/MenuItem";
 // Define background colors for each route
 const bgColors: { [key: string]: string } = {
   "/": "#00194D", // Deep blue
-  "/register": "#10B981", // Green
-  "/classification": "#F97316", // Orange
-  "/athletes": "#EF4444", // Red
+  "/register": "#8BC34A", // Green
+  "/athletes": "#F97316", // Orange
+  "/classification": "#E02D40", // Red
   "default": "#FBBF24", // Yellow
 };
 
