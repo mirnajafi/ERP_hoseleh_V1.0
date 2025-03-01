@@ -14,7 +14,7 @@ const RecommendedServices: React.FC<BoxProps> = ({
 
 }) => {
     return (
-        <div className={'w-full flex flex-col lg:flex-row-reverse text-xs bg-[#4CAF501A] rounded-[8px] mt-4 p-5'}>
+        <div className={'w-full flex flex-col lg:flex-row-reverse text-xs bg-[#4CAF501A] rounded-[8px] mt-4 py-3'}>
             <div className="flex flex-col mr-4 w-full">
                 <div className="font-bold flex flex-row items-center special-margin"><CircleIcon fillColor="#4CAF50" color="white" width={10} height={10} /> {title}</div>
 
