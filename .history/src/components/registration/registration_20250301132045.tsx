@@ -51,7 +51,7 @@ const Registration = () => {
 
             </div>
 
-            <div className="w-full flex flex-col-reverse xl:flex-row">
+            <div className="w-full flex flex-row">
 
                 <div className="w-full flex flex-col">
                     <WeekTable
@@ -88,7 +88,7 @@ const Registration = () => {
                     <div className="w-full xl:py-2 my-0  flex flex-col  border border-[#F53E5E] rounded-[8px] p-[8px] bg-[#FFF9FA]">
                         <label className="text-xs font-bold text-gray-700 ml-4">تست های انجام شده</label>
 
-                        <div className="flex flex-col xl:flex-row">
+                        <div className="flex flex-row">
                             <Input
                                 label="نام تست"
                                 type="text"
@@ -116,8 +116,8 @@ const Registration = () => {
 
                     <div className="flex flex-col  w-full xl:items-start xl:justify-right ">
                         <label className="text-xs font-bold text-gray-700 ml-4 mt-4">کلاس های ثبت نامی</label>
-                        <div className="w-full xl:py-2  my-0 flex flex-col xl:flex-row">
-                        <Dropdown
+                        <div className="w-full flex flex-row items-start">
+                            <Dropdown
                                 label=" نام باشگاه"
                                 options={["گزینه 1", "گزینه 2", "گزینه 3"]}
                                 onSelect={handleSelect}
@@ -142,6 +142,7 @@ const Registration = () => {
                     </div>
 
                     <div className="w-full xl:py-2  my-0 flex flex-col xl:flex-row">
+                        <div className="w-full flex flex-row items-start">
                             <Dropdown
                                 label="سایر خدمات"
                                 options={["گزینه 1", "گزینه 2", "گزینه 3"]}
@@ -154,6 +155,7 @@ const Registration = () => {
                                 onSelect={handleSelect}
                             />
                             <TransparentBtn label='افزودن' />
+                        </div>
                     </div>
 
 
@@ -222,7 +224,7 @@ const Registration = () => {
 
                 </div>
 
-                <div className="w-full xl:w-1/6 p-2 flex flex-col">
+                <div className="w-1/6 p-2 flex flex-col">
                     <button className="bg-[#3B3E4B] text-white p-4 w-full border rounded-[8px] my-2">نمایش دوره‌ها</button>
                     <button className="bg-transparent text-[#007F63]  p-4 w-full border-2 border-[#007F63] rounded-[8px] flex items-center justify-center font-bold my-2"><PlusIcon width={20} height={20} /> ثبت دوره جدید</button>
                     <LeftSideBox title={"تست های انجام شده"} test1={"بادی کامپوزیشن"} />

@@ -222,7 +222,7 @@ const Registration = () => {
 
                 </div>
 
-                <div className="w-full xl:w-1/6 p-2 flex flex-col">
+                <div className="xl:w-1/6 p-2 flex flex-col">
                     <button className="bg-[#3B3E4B] text-white p-4 w-full border rounded-[8px] my-2">نمایش دوره‌ها</button>
                     <button className="bg-transparent text-[#007F63]  p-4 w-full border-2 border-[#007F63] rounded-[8px] flex items-center justify-center font-bold my-2"><PlusIcon width={20} height={20} /> ثبت دوره جدید</button>
                     <LeftSideBox title={"تست های انجام شده"} test1={"بادی کامپوزیشن"} />
