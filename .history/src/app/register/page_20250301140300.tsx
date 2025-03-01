@@ -3,6 +3,7 @@
 
 import PageHeader from "@/components/formHeader/formHeader";
 import Tabs from "@/components/formTab/formTab";
+<<<<<<< HEAD
 import PersonalInfo from "@/components/personalInfo/personalInfo";
 import RecognitionEvaluator from "@/components/recognitionEvaluator/recognitionEvaluator";
 import Registration from "@/components/registration/registration";

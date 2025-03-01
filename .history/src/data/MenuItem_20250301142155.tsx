@@ -15,19 +15,16 @@ export default function MenuItem({ item, isActive, onClick, bgColor }: MenuItemP
   return (
     <div className="mb-3 relative">
       {isActive && (
-        <>
-          {/* Left Side Curved Connectors */}
-          <div className="absolute left-0 -top-[32px] w-8 h-8 bg-dashboard-bg ml-2" style={{
-            marginLeft: '0.4rem'
-          }}>
-            <div style={{ width: '100%', height: '100%', borderRadius: '0 0 0 1.25rem', backgroundColor: bgColor }} />
-          </div>
-          <div className="absolute left-0 -bottom-[32px] w-8 h-8 bg-dashboard-bg ml-2" style={{
-            marginLeft: '0.4rem'
-          }}>
-            <div style={{ width: '100%', height: '100%', borderRadius: '1.25rem 0 0 0', backgroundColor: bgColor }} />
-          </div>
-          {/* 
+                      <>
+                        {/* Left Side Curved Connectors */}
+                        <div className="absolute left-0 -top-[32px] w-8 h-8 bg-dashboard-bg ml-2" style={{    marginLeft: '0.4rem'
+}}>
+                        <div style={{ width: '100%', height: '100%', borderRadius: '0 0 0 1.25rem', backgroundColor: bgColor }} />
+                        </div>
+                        <div className="absolute left-0 -bottom-[32px] w-8 h-8 bg-dashboard-bg ml-2">
+                        <div style={{ width: '100%', height: '100%', borderRadius: '1.25rem 0 0 0', backgroundColor: bgColor }} />
+                        </div>
+                        {/* 
                         <div style={{ position: 'absolute', left: '0', marginLeft: '0.25rem', top: '-32px', width: '2rem', height: '2rem', backgroundColor: 'var(--dashboard-bg)' }}>
                          <div style={{ width: '100%', height: '100%', borderRadius: '0 0 0 1.25rem', backgroundColor: bgColor }} />
                          </div>
@@ -41,16 +38,17 @@ export default function MenuItem({ item, isActive, onClick, bgColor }: MenuItemP
                         <div className="absolute left-0 -bottom-[32px] w-8 h-8 bg-dashboard-bg">
                           <div className="w-full h-full rounded-tl-[1.25rem]" style={{ backgroundColor: bgColor }} />
                         </div> */}
-        </>
-
+                      </>
+                      
       )}
 
       {/* Main Menu Item */}
       <div
-        className={`flex items-center justify-between px-4 py-2 ${isActive
+        className={`flex items-center justify-between px-4 py-2 ${
+          isActive
             ? "bg-dashboard-bg text-slate-700 rounded-r-2xl"
             : "hover:bg-white/10 rounded-lg"
-          }`}
+        }`}
         onClick={onClick} // Handle click for navigation
         style={{ cursor: "pointer" }} // Add pointer cursor
       >
@@ -64,9 +62,9 @@ export default function MenuItem({ item, isActive, onClick, bgColor }: MenuItemP
             style={
               isActive
                 ? {
-                  filter:
-                    'invert(45%) sepia(99%) saturate(1234%) hue-rotate(346deg) brightness(98%) contrast(96%)',
-                }
+                    filter:
+                      'invert(45%) sepia(99%) saturate(1234%) hue-rotate(346deg) brightness(98%) contrast(96%)',
+                  }
                 : {}
             }
           />

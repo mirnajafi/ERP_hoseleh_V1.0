@@ -22,7 +22,7 @@ export default function MenuItem({ item, isActive, onClick, bgColor }: MenuItemP
           }}>
             <div style={{ width: '100%', height: '100%', borderRadius: '0 0 0 1.25rem', backgroundColor: bgColor }} />
           </div>
-          <div className="absolute left-0 -bottom-[32px] w-8 h-8 bg-dashboard-bg ml-2" style={{
+          <div className="absolute left-0 -bottom-[32px] w-8 h-8 bg-dashboard-bg ml-2"style={{
             marginLeft: '0.4rem'
           }}>
             <div style={{ width: '100%', height: '100%', borderRadius: '1.25rem 0 0 0', backgroundColor: bgColor }} />
