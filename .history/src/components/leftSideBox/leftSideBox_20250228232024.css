@@ -1,0 +1,9 @@
+.containLeftSBox {
+  background: linear-gradient(270deg, #F56E86 0%, #F53E5E 100%);
+  color: white;
+  justify-content: right;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  margin-right: 10px;
+}

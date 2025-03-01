@@ -1,0 +1,34 @@
+'use client';
+
+import React from "react";
+
+interface IconProps {
+  width?: number;
+  height?: number;
+  color?: string;
+}
+
+const CalendarIcon: React.FC<IconProps> = ({ width = 21, height = 22, color = "white" }) => {
+  return (
+    <svg
+      width={width}
+      height={height}
+      viewBox="0 0 21 22"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M6.21875 1V4" stroke={color} strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M14.2188 1V4" stroke={color} strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M1.71875 8.08997H18.7188" stroke={color} strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M19.2188 7.5V16C19.2188 19 17.7188 21 14.2188 21H6.21875C2.71875 21 1.21875 19 1.21875 16V7.5C1.21875 4.5 2.71875 2.5 6.21875 2.5H14.2188C17.7188 2.5 19.2188 4.5 19.2188 7.5Z" stroke={color} strokeWidth="2" strokeMiterlimit="10" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M13.9125 12.7H13.9215" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M13.9125 15.7H13.9215" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10.2133 12.7H10.2222" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M10.2133 15.7H10.2222" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6.51404 12.7H6.52302" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M6.51404 15.7H6.52302" stroke={color} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+};
+
+export default CalendarIcon;

@@ -1,0 +1,30 @@
+.radio-btn {
+    width: 18px;
+    height: 18px; 
+    border-radius: 2px;
+    background-color: white;
+    margin: 0; 
+    position: relative;
+  }
+ 
+  
+  .week-table{
+
+  }@media (max-width: 768px) {
+    .week-table {
+        display: flex;
+        flex-direction: column; /* ردیف‌ها را به صورت عمودی نمایش می‌دهد */
+        width: 100%;
+    }
+    .week-row {
+        display: flex;
+        flex-direction: row; /* ستون‌ها را به صورت افقی نمایش می‌دهد */
+        justify-content: space-between; /* فاصله بین ستون‌ها */
+        border-bottom: 1px solid #ccc; /* خط جداکننده بین ردیف‌ها */
+        padding: 10px 0; /* فاصله داخلی */
+    }
+    .week-cell {
+        flex: 1; /* هر ستون به یک اندازه فضای موجود را اشغال می‌کند */
+        text-align: center; /* متن را در وسط قرار می‌دهد */
+    }
+}
