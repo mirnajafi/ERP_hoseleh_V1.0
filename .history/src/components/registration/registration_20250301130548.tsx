@@ -230,7 +230,7 @@ const Registration = () => {
                     <LeftSideBox title={"تست های انجام شده"} test1={"بادی کامپوزیشن"} />
 
                     <RecommendedCourse title={"دوره‌های پیشنهادی ارزیاب"} name={"کلاس EMS"}/>
-                    <RecommendedServices title={"خدمات پیشنهادی ارزیاب"}/>
+                    <RecommendedServices/>
                 </div>
             </div>
 

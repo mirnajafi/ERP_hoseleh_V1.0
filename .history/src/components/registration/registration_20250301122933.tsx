@@ -13,8 +13,6 @@ import LeftSideBox from "../leftSideBox/leftSideBox";
 import RadioButton from "../radioBtn/radioBtn";
 import InputDate from "../inputDate/inputDate";
 import PriceBox from "../priceBox/priceBox";
-import RecommendedCourse from "../recommendedCourse/recommendedCourse";
-import RecommendedServices from "../recommendedServices/recommendedServices";
 
 const Registration = () => {
 
@@ -173,7 +171,7 @@ const Registration = () => {
                         <PriceBox title={"مبلغ تخفیف:"} price={"7,800,000 ریال"} priceText={"هفتصد هزار تومان"} />
 
                         
-                        <PriceBox title={'مبلغ کل بعد از تخفیف:'} price={"7,800,000 ریال"} priceText={"هفتصد هزار تومان"} />
+                        <PriceBox title={"مبلغ تخفیف:"} price={"7,800,000 ریال"} priceText={"هفتصد هزار تومان"} />
 
 
 
@@ -228,9 +226,6 @@ const Registration = () => {
                     <button className="bg-[#3B3E4B] text-white p-4 w-full border rounded-[8px] my-2">نمایش دوره‌ها</button>
                     <button className="bg-transparent text-[#007F63]  p-4 w-full border-2 border-[#007F63] rounded-[8px] flex items-center justify-center font-bold my-2"><PlusIcon width={20} height={20} /> ثبت دوره جدید</button>
                     <LeftSideBox title={"تست های انجام شده"} test1={"بادی کامپوزیشن"} />
-
-                    <RecommendedCourse title={"دوره‌های پیشنهادی ارزیاب"} name={"کلاس EMS"}/>
-                    <RecommendedServices title={"خدمات پیشنهادی ارزیاب"}/>
                 </div>
             </div>
 

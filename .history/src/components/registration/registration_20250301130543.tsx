@@ -14,7 +14,6 @@ import RadioButton from "../radioBtn/radioBtn";
 import InputDate from "../inputDate/inputDate";
 import PriceBox from "../priceBox/priceBox";
 import RecommendedCourse from "../recommendedCourse/recommendedCourse";
-import RecommendedServices from "../recommendedServices/recommendedServices";
 
 const Registration = () => {
 
@@ -230,7 +229,7 @@ const Registration = () => {
                     <LeftSideBox title={"تست های انجام شده"} test1={"بادی کامپوزیشن"} />
 
                     <RecommendedCourse title={"دوره‌های پیشنهادی ارزیاب"} name={"کلاس EMS"}/>
-                    <RecommendedServices title={"خدمات پیشنهادی ارزیاب"}/>
+                    <Recome
                 </div>
             </div>
 
