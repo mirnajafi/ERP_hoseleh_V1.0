@@ -20,7 +20,7 @@ const WeekTable: React.FC<WeekTableProps> = ({ selectedDay, onDaySelect }) => {
         { day: "جمعه" },
     ];
 
-    const [dates] = useState<string[]>([]);
+    const [dates, setDates] = useState<string[]>([]);
     const [showRadios, setShowRadios] = useState<boolean[]>(Array(weekDays.length).fill(false)); 
 
 
